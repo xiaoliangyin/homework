@@ -1,0 +1,31 @@
+<html>
+<head>
+    <style>
+ 
+    </style>
+<script type="text/javascript">
+var left,top;
+window.onload= function () {
+    var temp = document.getElementById("a");
+    top1 = parseInt(temp.style.top);
+    console.log(top1)
+    left = temp.style.left;
+    console.log(left)
+}
+function show_coords(event){
+     var x = event.clientX-parseInt(left);
+     var y = event.clientY-parseInt(top1);
+     var say = document.all("coords");
+     say.innerHTML = "X:"+x+" Y:"+y;
+     say.style.position = "absolute";
+     say.style.left = x + 30;
+     say.style.top = y;
+    }
+</script>
+</head>
+<body >
+<a href="#" >超链接</a><p>
+<a href="#">超链接<p>
+<p id="coords"></p>
+</body>
+<html>

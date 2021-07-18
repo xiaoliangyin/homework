@@ -1,0 +1,718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+
+
+   *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        .kuang{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            background-image: linear-gradient(180deg,rgb(255,255,255),rgb(204,153,255));
+
+        }
+        .bubble{
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: inset 0 0 8px  #fff;
+            animation: flutter 10s infinite;
+            opacity: 0;
+        }
+        @keyframes flutter {
+            0%{
+                transform: translateX(0);
+                bottom: -100px;
+                opacity: 1;
+            }
+            50%{
+                transform: translateX(100px);
+                opacity: 0.5;
+            }
+
+            
+            100%{
+                transform: translateX(0px);
+                bottom: 100%;
+                opacity: 0;
+
+            }
+        }
+        .bubble:nth-child(1){
+            left: -10%;
+            width: 50px;
+            height: 50px; 
+            animation-duration: 9s;
+            animation-delay: 0.1s;
+        }
+        .bubble:nth-child(2){
+            left: 15%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 6s;
+            animation-delay: 1.5s;
+
+        }
+        .bubble:nth-child(3){
+            left: 20%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 10s;
+            
+
+
+        }
+        .bubble:nth-child(4){
+            left: 30%;
+            width: 30px;
+            height: 30px;
+            animation-duration: 5.5s;
+            animation-delay: 1.5s;
+
+        }
+        .bubble:nth-child(5){
+            left: 40%x;
+            width: 50px;
+            height: 50px;
+            animation-duration: 10s;
+            
+
+
+        }
+        .bubble:nth-child(6){
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 6s;
+            animation-delay: 1s;
+
+        }
+        .bubble:nth-child(7){
+            left: 60%;
+            width: 40px;
+            height: 40px;
+            animation-duration: 8s;
+            animation-delay: 1s;
+
+        }
+        .bubble:nth-child(8){
+            left: 65%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 12s;
+          
+        }
+        .bubble:nth-child(9){
+            left: 80%;
+            width: 55px;
+            height: 55px;
+            animation-duration: 5s;
+            animation-delay: 0.5s;
+            
+        }
+        .bubble:nth-child(10){
+            left: 100%;
+            width: 40px;
+            height: 40px;
+            animation-duration: 6s;
+
+        }
+		.demo{
+    width:1200px;
+    height:200px;
+    margin:0px auto;
+    /* background-color:aquamarine; */
+    overflow: hidden;/*用于隐藏超出展示容器的内容部分*/
+}
+.demo1{
+    width:6000px;
+    height:400px;
+    margin:0px auto;
+    animation:text 30s infinite  linear;
+    font-size:0px;/*消除图片间隔*/
+    
+}
+.demo1 img{
+    width:1200px;
+    height:400px;
+    float:left;
+}
+@keyframes text {          /*0%-20%是播放下一个图片，0%-10%是图片暂停的时间*/
+    0%,10%{
+        margin-left:0px;
+    }
+    20%,30%{
+        margin-left:-1200px;
+    }
+    40%,50%{
+        margin-left:-2400px;
+    }
+    60%,70%{
+        margin-left:-3600px;
+    }
+    80%,90%{
+        margin-left:-4800px;
+    }
+}
+
+
+
+
+
+
+
+
+
+ .ziti {
+    font-size: 30px;
+    font-family: monospace;
+    /* 1ch 代表0的宽度  */
+    width: 0ch;
+    white-space: nowrap;
+    /* animation: move 4s linear  forwards; */
+    /* steps 就是分几步来完成动画，有了 steps 不要写ease linear了 */
+    animation: move 4s steps(9) forwards;
+    overflow: hidden;
+	text-align:center;
+  }
+
+  @keyframes move {
+    0% {}
+    100% {
+      width: 60ch;
+    }
+  }
+  /* 外发光字体  */
+ h1{
+	 text-shadow:.2rem 0rem .5rem #CC99FF,-.2rem 0rem .5rem #CC99FF,0rem .2rem .5rem #CC99FF,0rem -.2rem .5rem #CC99FF;
+ }
+
+
+
+a{
+margin: 0;
+padding: 0;
+text-decoration: none;
+}
+
+header {
+width: 100%;
+height: 81px;
+}
+
+header>div {
+width: 100%;
+float: left;
+}
+
+.upper {
+width: 1200px;
+height: 81px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+}
+
+.left {
+width: 570px;
+height: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+.right {
+width: 357px;
+height: 100%;
+margin-top: 15px;
+display: flex;
+justify-content: space-around;
+}
+
+.left-l {
+width: 209px;
+}
+
+.left-l>img {
+padding-top: 14px;
+
+}
+
+.left-r {
+width: 288px;
+display: flex;
+justify-content: space-between;
+line-height: 81px;
+}
+
+.left-r>a {
+display: block;
+color: #47464a;
+width: 81px;
+height: 81px;
+text-align: center;
+}
+
+.left-r>a:hover {
+color: #ffffff;
+background-color: #ef4238;
+}
+
+.r-link {
+width: 259px;
+height: 41px;
+border: 2px solid #e0e0e0;
+display: flex;
+justify-content: center;
+border-radius: 20px;
+}
+
+.r-link>input {
+width: 222px;
+height: 41px;
+border: none;
+border-radius: 20px;
+text-align: center;
+}
+
+.r-link>div {
+width: 41px;
+height: 41px;
+background-image: url("…/IMG/sprite_webpage.png");
+background-position: 0 0;
+}
+
+.head-por {
+width: 45px;
+height: 45px;
+}
+
+.head-portrait {
+display: block;
+width: 45px;
+height: 45px;
+background-image: url("…/IMG/sprite_webpage.png");
+background-position: -45px 0;
+}
+
+/* 导航栏 */
+
+.lower {
+width: 100%;
+height: 61px;
+background-color: #47464a;
+}
+
+.lower>div {
+width: 800px;
+margin: 0 auto;
+display: flex;
+justify-content: space-around;
+}
+
+.lower>div>div>a {
+color: #8e9999;
+line-height: 61px;
+}
+
+.piaofang:hover {
+color: #ef4238;
+}
+
+/* 排行榜 */
+.list {
+width: 960px;
+margin: 0 auto;
+margin-top: 30px;
+}
+
+.list>div {
+width: 100%;
+margin: 0 auto;
+margin-bottom: 31px;
+}
+
+.list>div>p {
+text-align: center;
+font-size: 12px;
+color: #9f9f9f;
+}
+
+.list>div:nth-child(1)>p>span {
+color: #ffb400;
+}
+
+/* 湄公河行动*/
+.yinpian {
+height: 222px;
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+.yinpian>div:nth-child(1) {
+width: 242px;
+height: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+.yinpian img {
+width: 190px;
+height: 222px;
+al
+}
+
+.yinpian>div:nth-child(1)>div {
+width: 50px;
+height: 50px;
+text-align: center;
+background-color: #ef4238;
+margin-top: 80px;
+}
+
+.yinpian>div:nth-child(1)>div>i {
+color: #ffffff;
+line-height: 50px;
+}
+
+.yinpian>div:nth-child(2) {
+width: 683px;
+height: 100%;
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid #e5e5e5;
+}
+
+.yinpian>div:nth-child(2)>div:nth-child(1) {
+margin-top: 30px;
+}
+
+.yinpian>div:nth-child(2)>div:nth-child(1)>h4 {
+font-size: 20px;
+margin-bottom: 20px;
+}
+
+.yinpian>div:nth-child(2)>div:nth-child(1)>p:nth-child(1) {
+font-size: 18px;
+}
+
+.yinpian>div:nth-child(2)>div:nth-child(1)>p:nth-child(3) {
+font-size: 18px;
+color: #9cb8db;
+}
+
+.yinpian>div:nth-child(2)>div:nth-child(2)>i {
+font-weight: bold;
+line-height: 200px;
+color: #ffb400;
+}
+
+.yinpian>div:nth-child(2)>div:nth-child(2)>i>span {
+font-size: 36px;
+}
+
+body>div {
+width: auto;
+display: flex;
+justify-content: flex-end;
+}
+
+/* 底部 */
+footer {
+width: 100%;
+height: 153px;
+background-color: #262426;
+}
+
+footer>div {
+width: 918px;
+height: 153px;
+margin: auto;
+display: flex;
+justify-content: center;
+/* align-items: center; */
+align-content: center;
+flex-wrap: wrap;
+}
+
+footer>div>p {
+color: #66513a;
+font-size: 14px;
+}
+.laction{
+			
+			right:30px;
+			top:30px;
+		}
+		.nav{
+				position: relative;/*子绝父相*/
+				height: 350px;
+				width: 350px;
+				margin:0 auto;
+			}
+			.nav:hover::before{/*鼠标进过前面插入一个为元素*/
+				border: 3px solid red;
+				content: "";
+				width: 100%;
+				height: 100%;
+				display: block;
+				position:absolute;
+				box-sizing: border-box;/*把padding和border都加入width*/
+			
+			}
+</style>
+</head>
+
+<body>
+
+
+
+  <div class="kuang">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+  <div class="ziti">
+<h1>景点人气榜单<h1>
+    </div>
+<div class="laction">当前位置:<a href="index.html">首页</a>>>>旅游推荐</div>
+<!-- 天山天池 -->
+    <div class="yinpian">
+     
+        <div >
+           <div><i>1</i></div>
+            <a href="#"><img src="QQ图片20210418160530.jpg" width="400" alt="天山天池 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>天山天池</h4>
+                <p>天池古称“瑶池”，是天山博格达峰北侧的一个半月形湖泊，湖水晶莹如玉，倒映着博格达峰，四周群山环抱，山上布满了挺拔、苍翠的云杉、塔松，犹如仙境。推荐下午晚些去，因为随着光线的变化，湖水会呈现近处碧绿远处蓝色的样子</p>
+                <p>坐标：昌吉回族自治州阜康市天山天池风景区</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★ </span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+    <!-- 乌鲁木齐天山大峡谷 -->
+    <div class="yinpian">
+        <div>
+            <div><i>2</i></div>
+            <a href="#"><img src="OR(]DT1K6CGM0%PI$1K8)W4.jpg" alt="乌鲁木齐天山大峡谷 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>乌鲁木齐天山大峡谷</h4>
+                <p>由褐红色的山群直插云霄。在太阳照射下，犹如一簇簇燃烧的火焰</p>
+                <p>地址：位于乌鲁木齐县南山区内</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+    <!-- 五江温泉城 -->
+    <div class="yinpian">
+        <div>
+            <div><i>3</i></div>
+            <a href="#"><img src="QQ图片20210418160530.jpg"" alt="赛里木湖 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>赛里木湖</h4>
+                <p>
+                拍摄神往已久的赛里木，碧水蓝天，雪山倒影，野花盛开，牛羊在草原上悠闲的吃草，赛里木湖以高山湖泊优美自然景观和白天鹅自然保护区成为摄影家的天堂</p>
+                <p>地址：位于伊犁哈萨克自治州霍城县</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+<!-- 丝绸之路国际滑雪场 -->
+    <div class="yinpian">
+        <div>
+            <div><i>4</i></div>
+            <a href="#"><img src="Y4%6Y~5ND9NBBUF~6CKF}XI.jpg" alt="丝绸之路国际滑雪场 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>丝绸之路国际滑雪场</h4>
+                <p>地处天山北坡逆温带生态谷，海拔1800米至2500米，是冬季滑雪度假，夏季消暑游玩的理想选择</p>
+                <p>地址：位于天山山脉</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+
+<!-- 喀纳斯 -->
+    <div class="yinpian">
+        <div>
+            <div><i>5</i></div>
+            <a href="#"><img srC="D(ET}@~~BW@}20}[P($R`FE.jpg" alt="喀纳斯 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>喀纳斯</h4>
+                <p>沿喀纳斯河一路漫步，欣赏西伯利亚落叶松原始森林、白桦林风景，神仙塆，卧龙湾，月亮湾，鸭泽湖，游览喀纳斯湖</p>
+                <p>地址：位于新疆阿勒泰山中段，地处中国与哈萨克斯坦，俄罗斯，蒙古交界处</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+
+<!-- 伊犁 -->
+    <div class="yinpian">
+        <div>
+            <div><i>6</i></div>
+            <a href="#"><img src="HYGCAOF)1654CDD{AL$4Z1A.jpg" alt="伊犁薰衣草 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>伊犁薰衣草</h4>
+                <p>这块有着“塞外江南 ”、“ 中亚湿岛”等诸多美誉的土地，拥有庞大的薰衣草种植规模，河谷地区散落有诸多草原，特殊的地理地貌使“ 伊犁 花海”在无数“全球最美花海”的排行榜上都位列前茅</p>
+                <p>地址：位于新疆省伊犁市</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+
+<!-- 那拉提草原 -->
+    <div class="yinpian">
+        <div>
+            <div><i>7</i></div>
+            <a href="#"><img src="DJJY6%M0](W7MD$331`7Y(C.jpg" alt="那拉提草原 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>那拉提草原</h4>
+                <p>太阳刚刚探出头来，就用第一缕阳光亲吻了这片草原，于是，牧民的先祖们便给这片土地起了一个诗意般的名字——那拉提，意为：最先见到太阳的地方。4-6月是那拉提草原最佳的赏花季，7月开始是一望无际的碧绿，静谧而美好。</p>
+                <p>地址：新疆省新源县</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+
+<!-- 喀什古城 -->
+    <div class="yinpian">
+        <div>
+            <div><i>8</i></div>
+            <a href="#"><img src="OC]A2NW$Y18XL7FCZAS)4`4.jpg" alt="喀什古城 "></a>
+        </div>
+        <div>
+            <div>
+                <h4>喀什古城</h4>
+                <p>神秘喀喇昆仑与广褒瀚海塔克拉玛干大漠之间，绿洲 喀什 ，沉淀着东西方文明的碰撞。是 喀什 ，也是两千多年的漫长岁月的 疏勒 。时光一直向前，而这座城，却好像被时间停留在原地</p>
+                <p>地址：位于新疆喀什市</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+
+    <!-- 轮台胡杨 -->
+    <div class="yinpian">
+        <div>
+            <div><i>9</i></div>
+            <a href="#"><img src="I`VUIKMFXN_J@%$V~)JCR1B.jpg" alt="轮台胡杨"></a>
+        </div>
+        <div>
+            <div>
+                <h4>轮台胡杨</h4>
+                <p>新疆轮台的胡杨林是中国美的十大森林之一！秋季是胡杨美的季节，来了记得坐一次蓝黄相间的复古小火车，穿越绝美仙境。</p>
+                <p>新疆省轮台市</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+    <!-- 巴音布鲁克 -->
+    <div class="yinpian">
+        <div>
+            <div><i>10</i></div>
+            <a href="#"><img src="6Z0OO$@1Q20QOD]GC]GDT25.jpg" alt="巴音布鲁克"></a>
+        </div>
+        <div>
+            <div>
+                <h4>巴音布鲁克</h4>
+                <p>开都河从广袤的巴音布鲁克草原上蜿蜒流过，九个太阳同时落在长河里，可能一生才会见一次</p>
+                <p>地址：位于巴音郭楞蒙古自治区</p>
+            </div>
+            <div>
+                <i>
+                    <span>推荐指数：★★★</span>
+                    
+                </i>
+            </div>
+        </div>
+    </div>
+</article>
+<div>
+    <img src="./IMG/cat.png" alt="">
+</div>
+<!-- 底部 -->
+<footer>
+    <div>
+        <p>&copy;2021 禾禾旅游 maoyan.com 新ICP证160733号 新ICP备16022489号-1 新公网安备11010502030881号 网络文化经营许可证 电子公告服务规则</p>
+        <p>新疆禾禾文化传媒有限公司</p>
+    </div>
+</footer>
+
+</body>
+</html>

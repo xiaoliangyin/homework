@@ -1,0 +1,139 @@
+<!--demo0237.html -->
+<!DOCTYPE html >
+<html>
+<head>
+<title>会员注册表单</title>
+<meta  charset=utf-8 >
+<style type="text/css">    /*嵌入的样式表*/
+	table{
+		width:400px;
+		margin:0 auto;
+		border:1px solid black;
+		border-collapse:collapse;
+		font-size:13px;
+	}
+	table ,th,td,tr{
+border:0;
+
+}
+
+  
+
+</style>
+</head>
+<body>
+	
+	<!--以下<form></form>之间代码完成表单定义-->
+	<form name="form1" method="post" action="success.html">
+    <table border="1">
+    	 <tr>
+        	<td colspan="2"><img  src="images/header.jpg"  style=" width:400px; margin:0 auto"></td>
+        </tr>
+        <tr> <td height="32" colspan="2">旅游网会员注册</td>
+        </tr>
+        <tr>
+            <td width="87">用户名："html5 autofocus"</td>
+            <td width="269"><input type="text" name="myname" autofocus required></td>
+        </tr>
+        <tr>
+            <td>密码："html"</td>
+            <td><input type="password" name="mypassword"></td>
+        </tr>
+        <tr>
+            <td>确认密码：</td>
+            <td><input type="password" name="repassword"></td>
+        </tr>
+        <tr>
+            <td>性别："html"</td>
+            <td><input type="radio" name="rad" value="rad1">男
+            <input type="radio" name="rad" value="rad2">女</td>
+        </tr>
+        <tr>
+            <td>Email："html5"</td>
+            <td><input type="email" name="myemail" required> </td>
+        </tr>
+         <tr>
+        <td>Phone："html5"</td>
+        <td><input type="tel" name="tel" required ></td>
+        </tr>
+        <tr>
+        <td>年龄："html5"</td>
+        <td><input type="number" name="myage" min=16 max=28> </td>
+        </tr>
+        <tr>
+        <td>专业："html5"</td>
+        <td><input type="text"  list="alist" name="mydepartment" placeholder="maths" >
+        	<datalist id="alist">
+            	<option value="computer"> </option>
+               <option value="physics"> </option>
+               <option value="chinese"> </option>
+               <option value="Maths"> </option>
+            </datalist>
+       		 <p> <p> <p>
+         </td>
+        </tr>
+        
+        <tr>
+            <td>出生日期："html5"</td>
+            <td><input type="date" name="birthdate"> </td>
+        </tr>
+        <tr>
+            <td>周数："html5"</td>
+            <td><input type="week" name="myweek"></td>
+        </tr>
+        <tr>
+            <td>您选择的颜色："html5"</td>
+            <td><input type="color" name="mycolor" >
+        </td>
+        </tr>
+        <tr>
+            <td>英语等级："html5"</td>
+            <td><input type="range" name="rank"min=2 max=8  step=2 value="2" onChange="showr.value=value">
+            <output id="showr">4</output>级
+        </td>
+        </tr>
+    <!-- HTML4以下 -->
+        
+    <tr>
+        <td>爱好：</td>
+        <td>
+        <input name="check1" type="checkbox" value="sport">户外  
+        <input name="check2" type="checkbox" value="voice">音乐
+        <input name="check3" type="checkbox" value="movie">购物
+        <input name="check4" type="checkbox" value="shopping">其他
+        </td>
+    </tr>
+    <tr>
+        <td>所在地：</td>
+        <td>
+        <select name="menu2" size="">
+            <option value="2">北京</option>
+            <option value="3">上海</option>
+            <option value="4">大连</option>
+            <option value="5">其他</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td>联系电话：</td>
+        <td><input type="text" name="textfield4">
+        </td>
+    </tr>
+    <tr>
+        <td>备注：</td>
+        <td><textarea name="texta" rows="3" cols="30" wrap="" id=""></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td><input name="sub" type="submit" value="提交"> </td>
+        <td><input name="reset" type="reset" value="重置"></td>
+    </tr>
+         <td>
+        	 <label for myfile>请多重选择文件：</label>
+        </td>
+        <td> <input type="file" id="myfile" multiple form="myform" /></td>
+    </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+div {
+	font-size: 14px;
+	font-style:italic;
+}
+div {
+	font-size:10px;
+	font-style:normal;
+}

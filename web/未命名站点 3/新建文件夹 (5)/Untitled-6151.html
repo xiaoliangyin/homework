@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局</title>
+    <style>
+	
+#menu{
+  width:726px;
+  height:26px;
+  margin:0px auto;
+  boder:1px soild #999;
+  }
+#menu ul{
+margin :0px;
+padding:0px;
+list-style:none;
+}
+#menu ul li{
+background:#06C;
+height:26px;
+line-height:26px;
+text-align:center;
+border-right:1px soild #999;
+position :relative;
+width:120px;
+float:left;
+}
+a{
+display :block;
+font-size:13px;
+color:#FFF;
+text-decoration:none;
+}
+a:hover{
+color:#FFF;
+font-size:14px;
+}
+#menu ul li ul{
+display:none;
+top:26px;
+width:100px;
+border:1px soild #ccc;
+border-bottom:none;
+position: absolute;
+left:0px;}
+#menu ul li:hover ul{
+display:block;
+}
+#menu ul li:hover ul li a{
+display:block;
+}
+    .box{
+        height: 500px;
+        background-color: bisque;
+		background-image:url(QQ%E5%9B%BE%E7%89%8720210523083014.jpg);
+        position: relative;
+        overflow: hidden;
+    }
+    .box .box-content {
+        position: relative;
+        height: 100%;
+        margin-left: 210px;
+        margin-right: 210px;
+		 background-color: bisque;
+       
+    } 
+    .box .box-left { 
+        width: 200px; 
+        position: absolute; 
+        height: 300px; 
+        left: 0;
+        top:0;
+        background-color: green; 
+    } 
+    .box .box-right { 
+        width: 200px; 
+        position: absolute; 
+        min-height: 100%; 
+        right: 0px;
+        top:0;
+        background-color: pink; 
+    } 
+    header,footer { height: 75px; background-color: aqua; } 
+</style> 
+</head>
+<body> 
+    <header>
+    <div id="menu">
+  <ul>
+  <li><a href="#">lalal</a></li>
+  <li><a href="#">css</a>
+    <ul>
+      <li><a href="#">heheh</a></li>
+      <li><a href="#">llllll</a></li>
+   </ul>
+  </li>
+  <li><a href="#">lalal</a></li>
+  <li><a href="#">lalal</a></li>
+  <li><a href="#">lalal</a></li>
+  <li><a href="#">lalal</a></li>
+
+  
+  </ul>
+ </div>
+     </header> 
+    <div class="box"> 
+        <div class="box-content">
+            <div class="child">
+                中间主题内容asdasdasdsadsasda嘎达可根但是萨嘎萨嘎据阿里就够了及代理商解放螺
+丝钉结案率放假啊了解
+            </div>
+        </div>
+        <div class="box-left">
+            11dsdasdas不你弟弟呢单独
+        </div>
+        <div class="box-right">
+            12酷酷酷酷酷的的是计算机技术升级的历史记录
+        </div> 
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>

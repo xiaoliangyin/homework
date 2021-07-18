@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<head>
+<meta charset="gb2312">
+<title>鼠标移动</title>
+<style>
+#zone img{  /*小图属性*/
+	width:226px;
+	height:200px;
+	border:5px solid #f4f4f4;
+	}
+#enlarge_img{
+	position:absolute;
+	width:226px;
+	
+	display:none;  /*默认状态大图不显示*/
+	z-index:9;     /*大图位于上层*/
+	border:5px solid #f4f4f4;
+	}
+	.one{
+		position:absolute;
+		float:right;
+		left:800px;
+		top:450px;
+		
+	}
+</style>
+<script>
+function show() {
+    var demo = document.getElementById("zone");
+    var imgs = zone.getElementsByTagName("img");    //获取zone中的图片
+    var ei = document.getElementById("enlarge_img");
+    for(i=0; i<imgs.length; i++){
+        var ts = imgs[i];
+        ts.onmousemove = function(event){   //兼容IE和DOM事件
+            event = event || window.event;
+            ei.style.display = "block";
+			//设置大图的路径和显示大小
+            ei.innerHTML = '<img src="' + this.src+ '" style="width:226px;" />';
+            ei.style.top  = document.body.scrollTop + event.clientY + 10 + "px";
+            ei.style.left = document.body.scrollLeft + event.clientX + 10 + "px";
+        }
+        ts.onmouseout = function(){
+            ei.innerHTML = "";
+            ei.style.display = "none";
+        }
+        ts.onclick = function(){    
+            window.open( this.src );
+        }
+    }
+}
+ function getSex(s) 	{		//获取性别
+		for(var i=0;i<s.length;i++)	{
+			if(s[i].checked) return s[i].value;
+		}
+		return "[没有选择]";
+	}
+	function getSelectedPrograms(programs)	{		//获取身份
+		var i,result="";
+		for(i=0;i<programs.length;i++)	{
+			if(programs[i].checked) result += "["+programs[i].value+"]";
+		}
+		return result;
+	}
+    function getSelected(Selected)	{		
+		var i,result="";
+		for(i=0;i<Selected.length;i++)	{
+			if(Selected[i].checked) result += "["+Selected[i].value+"]";
+		}
+		return result;
+	}
+    function getSelectedma(Selectedma)	{		
+		var i,result="";
+		for(i=0;i<Selectedma.length;i++)	{
+			if(Selectedma[i].checked) result += "["+Selectedma[i].value+"]";
+		}
+		return result;
+	}
+    function getSelectedmab(Selectedmab)	{		
+		var i,result="";
+		for(i=0;i<Selectedmab.length;i++)	{
+			if(Selectedmab[i].checked) result += "["+Selectedmab[i].value+"]";
+		}
+		return result;
+	}
+    function getSelectedmabc(Selectedmabc)	{		
+		var i,result="";
+		for(i=0;i<Selectedmabc.length;i++)	{
+			if(Selectedmabc[i].checked) result += "["+Selectedmabc[i].value+"]";
+		}
+		return result;
+	}
+		function showResult() 			{//显示提交结果
+		var msg = "您的性别:"+getSex(document.myform.sex);
+		msg += "\n您的身份是:"+getSelectedPrograms(document.myform.program);
+		msg += "\n来到这个网站有没有拓宽视野: "+getSelected(document.myform.program2);
+		msg += "\n您认为对您有帮助吗: "+getSelectedma(document.myform.program22);
+		msg += "\n如果让您出去旅游，你最看重的是哪方面: "+getSelectedmab(document.myform.program222);
+		msg += "\n您的宝贵意见？"+getSelectedmabc(document.myform.program2223);
+		confirm(msg);
+	}
+
+
+</script>
+</head>
+
+<body onLoad="show();">
+<img src="file:///D|/dw/未命名站点 3/OC]A2NW$Y18XL7FCZAS)4`42.jpg" alt="" width="100%" height="200px" />
+<div id="zone">
+	<img src="file:///D|/dw/未命名站点 3/6Z0OO$@1Q20QOD]GC]GDT251.jpg"  />
+	<img src="file:///D|/dw/未命名站点 3/hainan1.jpg" />
+	<img src="file:///D|/dw/未命名站点 3/I`VUIKMFXN_J@%$V~)JCR1B1.jpg" />
+    <img src="file:///D|/dw/未命名站点 3/41.jpg")JCR1B1.jpg" />
+    <img src="file:///D|/dw/未命名站点 3/jiangnan_041.jpg" />
+</div>
+<div id="enlarge_img"></div>
+<table width="180" border="0" align="left" cellpadding="0" cellspacing="0" class="slider">
+  <tr>
+    <td style="border-bottom:1px solid #CCC" height="40" align="center" valign="middle" bgcolor="#FFFFFF"><a style="color:#000000" href="#">联系我们</a></td>
+    </tr>
+  <tr>
+    <td style="border-bottom:1px solid #CCC" height="40" align="center" valign="middle" bgcolor="#333300"><a style="" >调查问卷</a></td>
+    </tr>
+    </tr>
+  </table>
+  <div class="nr">
+	 <div class="site"></div>
+	 <ul class="txtlixt">
+	 	 <li><form name="myform">
+	<p>您的性别(单选):	
+		<input  type="radio" value="男" name="sex" />
+		男
+		<input  type="radio" value="女" name="sex" />女</p>
+  <p>您的身份是:
+    <input  type="checkbox"  name="program" value="已婚"/>
+已婚
+    <input  type="checkbox"  name="program" value="未婚"/>
+未婚</p>
+  <p>来到这个网站有没有让您的视野拓宽:
+    <input  name="program2"  type="checkbox" value="有"/>
+    有
+    <input  type="checkbox"  name="program2" value="没有"/>
+    没有
+    <input  name="program2"  type="checkbox" id="program2" value="中立"/>
+    中立</p>
+  <p>您认为对您有帮助吗:
+    <input  name="program22"  type="checkbox" value="有"/>
+    干净
+    <input  type="checkbox"  name="program22" value="没有"/>
+一般
+<input  name="program22"  type="checkbox" id="program22" value="中立"/>
+中立</p>
+  <p>如果让您去旅游，你最看重的是哪方面:
+    <input  name="program222"  type="checkbox" value="价格优惠"/>
+    价格优惠
+    <input  type="checkbox"  name="program222" value="拓宽眼界"/>
+    拓宽眼界
+    <input  name="program222"  type="checkbox" id="program222" value="舒适度"/>
+    舒适度
+   
+  <p>可以向我们提出一些建议
+    <input  name="program2223"  type="checkbox" value="关于价格方面"/>
+    关于与价格方面
+    <input  type="checkbox"  name="program2223" value="摄影方面"/>
+    摄影方面
+    <input  name="program2223"  type="checkbox" id="program2223" value="地域方面"/>
+    地域方面
+    <input  name="program22222"  type="checkbox" id="program22222" value="其他"/>
+    其他</p>
+  <p><input type="button" name="Button1" value="提交" onClick="showResult()" /></p>
+</form></li>
+    </ul>  
+	 <ul id="pagination-digg"><li></li>
+      	<li>欢迎来电咨询</li>
+      	<li>您的宝贵意见</li>
+      	<li>谢谢光临</li>
+      	<li>欢迎再来</li>
+    </ul>
+  </div>
+  </div>
+  <div class="clear"></div>
+  <div id="footer">
+    <div id="footer_infor">  禾禾旅游  </div>
+  </div>
+</div>
+<div class="one"><img src="file:///D|/dw/未命名站点 3/DEEB81A8F034E20C88F404F1BE2F7C1F2.jpg"/></div>
+</body>
+</html>
+

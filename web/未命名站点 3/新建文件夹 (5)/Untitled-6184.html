@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>页面2</title>
+<style>
+/* 静态按钮的文本 */
+.btn::before {
+    content: attr(data-text);    /* 划重点！这样可多次复用本段CSS */
+    opacity: 1;
+    position: absolute;          /* 使其不占据空间，不将子元素span挤到后面去 */
+    -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+    -ms-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+    -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+    transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+}
+.btn:hover::before {
+    opacity: 0;
+    transform: translateY(100%);
+}
+/* 鼠标滑入逐个渐入的文字 */
+.btn>span {
+    opacity: 0;
+    -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+    -ms-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+    -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+    transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1) 0s;
+}
+.btn:hover>span {
+    opacity: 1;
+}
+.btn:hover>span:nth-child(1) {
+    -webkit-transition-delay: 0.01s;
+    -ms-transition-delay: 0.01s;
+    -moz-transition-delay: 0.01s;
+    transition-delay: 0.01s;
+}
+.btn:hover>span:nth-child(2) {
+    -webkit-transition-delay: 0.05s;
+    -ms-transition-delay: 0.05s;
+    -moz-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+}
+.btn:hover>span:nth-child(3) {
+    -webkit-transition-delay: 0.10s;
+    -ms-transition-delay: 0.10s;
+    -moz-transition-delay: 0.10s;
+    transition-delay: 0.10s;
+}
+/* ...有多少个字就写多少个延时，每次递增0.05s差不多，可自行调整，空格最好也算上，不然效果会不太顺畅 */
+</head>
+</style>
+
+<body>
+<div class="btn" data-text="Get Started Now">
+    <span>G</span>
+    <span>e</span>
+    <span>t</span>
+    <span>&nbsp;</span>
+    <span>S</span>
+    <span>t</span>
+    <span>a</span>
+    <span>r</span>
+    <span>t</span>
+    <span>e</span>
+    <span>d</span>
+    <span>&nbsp;</span>
+    <span>N</span>
+    <span>o</span>
+    <span>w</span>
+</div>
+</body>
+</html>

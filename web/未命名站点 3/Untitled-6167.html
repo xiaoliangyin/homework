@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+table{
+		width:400px;
+		margin:0 auto;
+		border:1px solid black;
+		border-collapse:collapse;
+		font-size:13px;
+	}	
+      body{
+          background:url()  no-repeat center top /*这里本兽加了个图片背景，用以区分背景的半透明及内容的完全不透明*/
+      }
+      .test-div{
+          position: relative;  /*日常相对定位(重要，下面内容也会介绍)*/
+          width:400px;
+          height: 120px;
+          padding: 20px 10px;
+          font-weight: bold;
+		  left:350px;
+		  top:50px;
+      }
+      .test-div:before{
+          position: absolute;  /*日常绝对定位(重要，下面内容也会略带介绍)*/
+          content: "";  /*:before和:after必带技能，重要性为满5颗星*/
+          top:0;
+          left: 0;
+          width: 100%;  /*和内容一样的宽度*/
+          height: 100%;  /*和内容一样的高度*/
+          background: rgba(0,102,255,0.1,.1); /*给定背景白色，透明度50%*/
+          z-index:-1 /*日常元素堆叠顺序(重要，下面内容也会略带介绍)*/
+		  
+      }
+	 
+	 
+	  #two{
+		  position:relative;
+		  
+		 
+	  }
+	  table ,th,td,tr{
+border:0;
+	  }
+
+.one{
+	float:left;
+	display:inline-block;
+	
+}
+.three
+{ position:relative;
+	left:260px;
+	top:5px;
+}
+.four{
+	position:relative;
+	left:260px;
+	top:40px;
+}
+.five{
+	position:relative ;
+	float:right;
+	top:0px;
+}
+  </style>
+  </head>
+  
+  <body>
+ <script language="javascript">
+   var weekday=new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");
+   var objDay=new Date();
+   //- 获取系统日期
+   var output=objDay.getDate()+"/";
+   output+=(objDay.getMonth()+1)+"/";
+   output+=objDay.getFullYear()+"<br>";
+   document.write("系统日期："+output);
+   //- 获取系统时间
+   output=objDay.getHours()+":";
+   output+=objDay.getMinutes()+":";
+   output+=objDay.getSeconds()+"<br>";
+   document.write("系统时间："+output);
+   document.write(weekday[objDay.getDay()]);  
+   //- 设置日期
+   objDay.setDate("25");
+   objDay.setMonth("2");
+   objDay.setFullYear("2016");
+   objDay.setHours("4");
+   objDay.setMinutes("8"); 
+   document.write("<br>重新设置后的日期时间值是"+objDay.toLocaleString());     
+</script>
+<div class="one">当前位置:<a href="index.html">首页</a>>>登记信息</div>
+<p>&gt;&gt; </p>
+<div class="three"><img src="65B2CD7D3E8712E4D209949F20A0A549.jpg" width="626" height="262" /></div>
+<div class="five"><img src="DEEB81A8F034E20C88F404F1BE2F7C1F.jpg" width="400" height="465" /></div>
+<form name="form1" method="post" action="success.html"> 
+  <table width="443"  border="1">
+      <tr>
+        <td width="74">Name</td>
+        <td width="353"><input placeholder="your name" name="name" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input placeholder="your password" /></td>
+      </tr>
+      <tr>
+        <td>Sex</td>
+        <td><input placeholder="your sex" name="sex"/></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input placeholder="email" name="email" /></td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td><input placeholder="phone" name="phone"/></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input placeholder="age" name="age"/></td>
+      </tr>
+      <tr>
+        <td>Your choose</td>
+        <td><input type="text"  list="alist" name="mydepartment" placeholder="Xinjiang" />
+          <datalist id="alist">
+            <option value="Xinjiang"> </option>
+            <option value="Shangdong"> </option>
+            <option value="Shanghai"> </option>
+            <option value="chongqin"> </option>
+          </datalist>
+          <p></p>
+          <p> </p>
+          <p></p></td>
+      </tr>
+      <tr>
+        <td>Hobby：</td>
+        <td><input name="check1" type="checkbox" value="sport" />
+          out
+          <input name="check2" type="checkbox" value="voice" />
+          music
+          <input name="check3" type="checkbox" value="movie" />
+          shopping
+          <input name="check4" type="checkbox" value="shopping" />
+          other </td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td><select name="menu2" size="">
+          <option value="2">Beijin</option>
+          <option value="3">Shanghai</option>
+          <option value="4">Daliang</option>
+          <option value="5">other</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td>Phone：</td>
+        <td><input type="text" name="textfield4" /></td>
+      </tr>
+      <tr>
+        <td>Remarks：</td>
+        <td><textarea name="texta" rows="3" cols="30" wrap="" id="texta"></textarea></td>
+      </tr>
+      <tr>
+        <td><button onclick="getForm()" input name="sub" value="submit" />submit</td>
+        <td><input name="reset" type="reset" value="Reset" /></td>
+      </tr>
+  <td><label for myfile>Place make multiple choice：</label></td>
+    <td><input type="file" id="myfile" multiple form="myform" /></td>
+  </tr>
+  
+    </table>
+  <div class="four"><img src="~6[76V%DKM4%QBB0QCL)QVR.jpg" width="741" height="274" /></div>
+</form>
+  <div class="four"> </div>
+  <script>
+  function getForm(){
+  var name=form1.name.value;
+  var sex=form1.sex.value;
+  var email=form1.email.value;
+  var phone=form1.phone.value;
+  var age=form1.age.value;
+  var choose=form1.mydepartment.value; 
+  alert("姓名:"+name+" "+"性别:"+sex+" "+"邮箱:"+email+" "+"电话:"+phone+" "+"年龄:"+age+" "+"所在地"+choose);
+  }
+  function make(){
+	  obj=document.form1.elements['body'];
+	  alert(obj.value);
+  }
+  alert(document.getElementById.value); 
+    </script>
+ <div></div>  
+<div>
+        <p>&copy;2021 禾禾旅游 maoyan.com 新ICP证160733号 新ICP备16022489号-1 新公网安备11010502030881号 网络文化经营许可证 电子公告服务规则</p>
+        <p>新疆禾禾文化传媒有限公司</p>
+    </div>
+</body>
+</html>

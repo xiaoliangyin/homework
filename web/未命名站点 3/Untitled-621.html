@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+<title>完全利用CSS实现图片切换特效</title>
+<meta http-equiv="content-type" content="text/html;charset=gb2312" />
+<style type="text/css">
+ * {
+  margin:0;
+  padding:0;
+}
+
+ul {
+  list-style:none;
+}
+
+#wrap {
+  position:relative;
+  width:900px;
+  height:300px;
+  margin:30px auto;
+  border:1px solid #9cc5ef;
+  overflow:hidden;
+}
+
+#slider {
+  width:300%;
+  height:100%;
+  font:100px/400px Microsoft Yahei;
+  text-align:center;
+  color:#fff;
+  margin-left:0;
+  -webkit-animation:slide1 8s ease-out infinite;
+}
+
+#slider li {
+  float:left;
+  width:900px;
+  height:100%;
+}
+
+#slider li:nth-child(1) {
+  background:#6bacef;
+}
+
+#slider li:nth-child(2) {
+  background:#297cd3;
+}
+
+#slider li:nth-child(3) {
+  background:#01254a;
+}
+
+/*创建三种动画策略*/
+@-webkit-keyframes slide1 {
+  0% { margin-left:0;}
+  23% { margin-left:0;}
+  33% { margin-left:-900px;}
+  56% { margin-left:-900px;}
+  66% { margin-left:-1800px;}
+  90% { margin-left:-1800px;}
+  100% {margin-left:0;}
+}
+
+@-webkit-keyframes slide2 {
+  0% { margin-left:-900px;}
+  23% { margin-left:-900px;}
+  33% { margin-left:-1800px;}
+  56% { margin-left:-1800px;}
+  66% { margin-left:0;}
+  90% { margin-left:0;}
+  100% {margin-left:-900px;}
+}
+
+@-webkit-keyframes slide3 {
+  0% { margin-left:-1800px;}
+  23% { margin-left:-1800px;}
+  33% { margin-left:0;}
+  56% { margin-left:0;}
+  66% { margin-left:-900px;}
+  90% { margin-left:-900px;}
+  100% {margin-left:-1200px;}
+}
+
+/* 隐藏Input按钮*/
+#l01, #l02, #l03 {
+  display:none;
+  text-align:center
+
+}
+ /*城市导航*/
+        .cityPosition {
+          height: 50px;
+        }
+        .cityPosition .block {
+          width: 100%;
+          background: #242424;
+          height: 50px;
+          z-index: 98;
+        }
+        .cityPosition .positionInner {
+          position: relative;
+          z-index: 10;
+          width: 1000px;
+          margin: 0 auto;
+        }
+        .cityPosition .cityList {
+          float: left;
+          padding: 13px 0;
+          position: relative;
+        }
+        .cityPosition .cityList a {
+          float: left;
+          width: 51px;
+          height: 24px;
+          font-size: 16px;
+          margin-right: 18px;
+          line-height: 22px;
+          color: #ffffff;
+          text-align: center;
+          -moz-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          transition: background ease 0.5s;
+        }
+        .cityPosition .cityList a:hover {
+          background: #e70084;
+        }
+        .cityPosition .cityList .active {
+          background: #e70084;
+        }
+        .cityPosition .cityList .moreCity {
+          width: 49px;
+          height: 22px;
+          line-height: 22px;
+          font-size: 14px;
+          margin: 0;
+          border: 1px solid #fde431;
+          color: #fde431;
+          border-radius: 10px;
+        }
+        .cityPosition .cityList .moreCity:hover {
+          background: none;
+        }
+        .cityPosition .moreCityList {
+          position: absolute;
+          width: 248px;
+          right: 10px;
+          top: 60px;
+        }
+        .cityPosition .moreCityList .cityArrow {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          font-size: 0;
+          border-width: 4px 6px;
+          border-style: dashed solid solid dashed;
+          top: -8px;
+          right: 20px;
+          border-color: transparent #ffffff #ffffff transparent;
+        }
+        .cityPosition .moreCityList a {
+          float: left;
+          width: 80px;
+          height: 28px;
+          line-height: 28px;
+          border: 2px solid #242424;
+          text-align: center;
+          margin: 0 -2px -2px 0;
+          color: #242424;
+          transition: background ease 0.5s, color ease 0.5s;
+          -moz-border-radius:0;
+          -webkit-border-radius:0;
+          border-radius:0;
+          background: #fff;
+        }
+        .cityPosition .moreCityList a:hover {
+          background: #e30001;
+          color: #ffffff;
+        }
+        .cityPosition .moreCityList .active {
+          background: #e30001;
+          color: #ffffff;
+        }
+		  /*banner*/
+        .banner {
+          position: relative;
+          width: 100% !important;
+        }
+        .banner img{
+          opacity: 0;
+          filter:alpha(opacity=0);
+        }
+        .banner .barrage {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+        .banner .barrage .single {
+            position: absolute;
+            left: 0%;
+            top: 0;
+            background: #fff;
+            border-radius: 40px;
+            visibility: hidden;
+            z-index: 11;
+            width: auto;
+            white-space:nowrap;
+            transform: translate3d(0,0,0);
+            -webkit-transform: translate3d(0,0,0);
+        }
+		.laction{
+			
+			right:30px;
+			top:30px;
+		}
+		.Location{
+			position:relative;
+			left:30px;
+			top:30px;
+		}
+		.login,.info{
+				display: inline-block;
+				vertical-align:auto;
+			}
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+			.one{
+				float:left;
+			}
+			footer {
+width: 100%;
+height: 153px;
+background-color: #262426;
+}
+
+footer>div {
+width: 918px;
+height: 153px;
+margin: auto;
+display: flex;
+justify-content: center;
+/* align-items: center; */
+align-content: center;
+flex-wrap: wrap;
+}
+
+footer>div>p {
+color: #66513a;
+font-size: 14px;
+}
+				
+
+</style>
+</head>
+  <body>
+<!-- 城市导航 -->
+    <div class="cityPosition">
+	<div class="block clearfix">
+		<div class="positionInner clearfix">
+		    <div class="cityLabel"></div>
+	    	<div class="cityList">
+			    <a href="200.html">北京</a><a href="2500.html">上海</a><a href="1602.html">南京</a><a href="3402.html">杭州</a><a href="602.html">广州</a><a href="619.html">深圳</a><a href="1615.html">苏州</a><a href="2402.html">济南</a><a href="1502.html">长沙</a><a href="1202.html">郑州</a><a href="1402.html">武汉</a><a href="300.html">重庆</a><a href="2802.html">成都</a><a href="2702.html">西安</a>	        </div>
+		</div>
+	</div>
+</div>
+<div class="laction">当前位置:<a href="index.html">首页</a>>>>国内旅游</div>
+
+<div id="wrap">
+  <ul id="slider">
+    <li> <img src="DJJY6%M0](W7MD$331`7Y(C.jpg" width="900px" height="300px"></li>
+    <li><img src="HYGCAOF)1654CDD{AL$4Z1A.jpg" width="900px" height="300px"></li>
+    <li><img src="http://p0.so.qhimgs1.com/t016122ec45c5fdc5fa.jpg" width="900px" height="300px"></li>
+  </ul>
+
+</div>
+<div class="one"><img src="CC5454D7D9CA5880E065EA3BBF19129E.jpg" alt="" width="308" height="1085" /></div>
+<table width="900" align="left" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+     <td width="200"><img src="QQ图片20210418160530.jpg" alt="" width="200" height="200" /></td>
+     <td width="25">&nbsp;</td>
+     <td width="200"><img src="D(ET}@~~BW@}20}[P($R`FE.jpg" alt="" width="200" height="200" /></td>
+     <td width="15">&nbsp;</td>
+     <td width="200"><img src="HYGCAOF)1654CDD{AL$4Z1A.jpg" alt="" width="200" height="200" /></td>
+     <td width="15">&nbsp;</td>
+     <td width="202"><img src="Y4%6Y~5ND9NBBUF~6CKF}XI.jpg" alt="" width="200" height="200" /></td>
+     <td width="25">&nbsp;</td>
+   </tr>
+   <tr>
+     <td><ul>
+       <li><span>￥3978起</span> </li>
+       <li>
+         <p>喀纳斯+五彩滩+天池双飞8人飞-24人精品团</p>
+       </li>
+     </ul></td>
+     <td>&nbsp;</td>
+     <td><ul>
+       <li><span>￥5050起</span> </li>
+       <li>
+         <p>新疆+喀什+库车+库尔勒+双飞八日游</p>
+       </li>
+     </ul></td>
+     <td>&nbsp;</td>
+     <td><ul>
+       <li><span>￥5029起</span> </li>
+       <li>
+         <p>喀纳斯+天山天池+赛里木湖+魔鬼城</p>
+       </li>
+     </ul></td>
+     <td>&nbsp;</td>
+     <td><ul>
+       <li><span>￥3629起</span> </li>
+       <li>
+         <p>天山天池+喀纳斯+吐鲁番+伊犁+那拉提5天双飞</p>
+       </li>
+     </ul></td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td><img src="I`VUIKMFXN_J@%$V~)JCR1B.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="mmexport1617803233759_看图王.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="yangzhou.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="ouzhou.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td><ul>
+       <li>
+         <p><span>￥7489起</span></p>
+         <p>[中秋]新疆喀纳斯-禾木-天池-吐鲁番-五彩滩双人飞</p>
+       </li>
+     </ul></td>
+     <td>&nbsp;</td>
+     
+     <td><p><span>￥7489起</span></p>
+     <p>[中秋]昌吉-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥7489起</span></p>
+     <p>[中秋]喀什-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥7489起</span></p>
+     <p>[中秋]那拉提-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+   </tr>
+   <tr>
+     <td><img src="4.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="3.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="I`VUIKMFXN_J@%$V~)JCR1B.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="yangzhou.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td><p><span>￥7489起</span></p>
+     <p>[中秋]喀纳斯-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥7489起</span></p>
+     <p>[中秋]伊犁-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥7489起</span></p>
+     <p>阿克苏-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥7489起</span></p>
+     <p>[中秋]乌鲁木齐-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td><img src="wKgE2l0yeMSAV8f6AA6nmjkZksU113.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="wKgEaVxtWNSAAynWAAgYIQKjB-k97.jpeg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="wKgED1woYniAZLueABTPJUQaNh023.jpeg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+     <td><img src="wuxi01.jpg" alt="" width="200" height="200" /></td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td><p><span>￥489起</span></p>
+     <p>和田-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥489起</span></p>
+     <p>天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥489起</span></p>
+     <p>伊犁-禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+     <td><p><span>￥889起</span></p>
+     <p>[国庆]禾木-天池-吐鲁番-五彩滩双人飞</p></td>
+     <td>&nbsp;</td>
+   </tr>
+ </table>
+<div class="login"></div>
+  <div class="info"></div>
+  <footer>
+  <div>
+        <p>&copy;2021 禾禾旅游 maoyan.com 新ICP证160733号 新ICP备16022489号-1 新公网安备11010502030881号 网络文化经营许可证 电子公告服务规则</p>
+        <p>新疆禾禾文化传媒有限公司</p>
+    </div>
+    </footer>
+  </body>
+</html>
+ 
